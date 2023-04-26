@@ -17,7 +17,7 @@ export class SignInPage implements OnInit {
 
   //#region Public Variables
   public userName:any = 'mohamedawad1193@gmail.com'
-  public inputType:any = 'password' 
+  public inputType:any = 'password'
   public userPassword:any = '123456'
   public data:any
   public isData : boolean = false
@@ -31,13 +31,13 @@ export class SignInPage implements OnInit {
     'email': [
       { type: 'required', message: 'البريد الالكتروني مطلوب' },
     ],
-    'password':[ 
+    'password':[
       { type: 'required', message: 'كلمة المرور مطلوبة' },
     ],
- 
+
     // other validations
   };
- 
+
   constructor(
     public router : Router,
     public toastController : ToastController,
@@ -47,7 +47,7 @@ export class SignInPage implements OnInit {
     private platform: Platform,
     public leo:PlatformLocation ,
     public formBuilder: FormBuilder
-  ) { 
+  ) {
     leo.onPopState(()=>{
       // navigator["app"].exitApp();
     })
@@ -77,17 +77,16 @@ export class SignInPage implements OnInit {
       if(this.data.studentInfo){
            const currentInfo = this.data.studentInfo.find((info:any) => info.current === "true");
             localStorage.setItem('currentInfo' , JSON.stringify(currentInfo))
-        
+
 
           let info = localStorage.getItem('currentInfo') || '';
           if(info){
            this.currentInfo = JSON.parse(info);
             // this.router.navigate([`/tabs/subjects/${this.currentInfo.infoId
             // }/${this.currentInfo.gradeId}`]);
-            this.router.navigate([`/subjects/${this.currentInfo.info_Id
-            }/${this.currentInfo.grade_id }`]);
-          
-          
+            this.router.navigate([`/tabs/`]);
+
+
           // }
          }
         }else{

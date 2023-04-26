@@ -11,7 +11,7 @@ export class HomePage {
   userAuth:any;
   currentInfo:any;
 
-   
+
     constructor(public router : Router , private generalService:GeneralService) {
         // localStorage.clear();
       // this.generalService.setData(true);
@@ -29,16 +29,15 @@ export class HomePage {
      this.currentInfo = JSON.parse(info);
     //  this.router.navigate([`/tabs/subjects/${this.currentInfo.infoId
     //  }/${this.currentInfo.gradeId}`]);
-    this.router.navigate([`/subjects/${this.currentInfo.info_Id
-    }/${ this.currentInfo.grade_Id }`]);
-    
+    this.router.navigate([`/app/tabs/subjects`]);
+
     }
       else if(this.userAuth?.token){
         this.router.navigate(['./countries']);
       }
     else{
         this.router.navigate(['/sign-in']);
-    } 
+    }
 
 
   }

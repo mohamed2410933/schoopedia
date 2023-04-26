@@ -5,14 +5,18 @@ import { TabsPage } from './tabs.page';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'tabs',
     component: TabsPage,
     children:[
       {
-        path: '',
-        redirectTo: 'favorate',
-        pathMatch: 'full'
+        path:'',
+        redirectTo:'app/tabs/subjects',
+        pathMatch:'full'
       },
+      {
+        path: 'subjects',
+        loadChildren: () => import('../subjects/subjects.module').then( m => m.SubjectsPageModule)
+      }
       // {
       //   path: 'favorate',
       //   loadChildren: () => import('../favorate/favorate.module').then( m => m.FavoratePageModule)
@@ -53,14 +57,10 @@ const routes: Routes = [
       //   path: 'student-profile',
       //   loadChildren: () => import('../student-profile/student-profile.module').then( m => m.StudentProfilePageModule)
       // },
-    
+
     ]
-  }
-  // {
-  //   path:'',
-  //   redirectTo:'tabs/home',
-  //   pathMatch:'full'
-  // }
+  },
+
 ]
 
 @NgModule({
