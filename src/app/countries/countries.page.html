@@ -1,0 +1,49 @@
+ 
+
+
+<ion-content>
+ <div class="homescreen-content">
+  <div class="header-conatiner split section-one">
+    <label for="">اختر الدولة</label>
+  </div>
+<ng-container>
+  <ng-container *ngIf="loaded">
+    <div id="container" class="split section-two">
+    <ion-card
+        *ngFor="let item of countriesList let i = index;" 
+        (click)="setRow(item.id)"   
+        [ngClass]="{ 'selected': selectedCountry == item.id }"
+        >
+      <ion-card-content>
+        <div class="card-container" >
+          <ion-img 
+          class="main-img" 
+          [src]='item?.image'
+          alt="country image"></ion-img>
+          <label for="">{{item?.name}}</label>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ng-container>
+<ng-container *ngIf="!loaded">
+  <ion-item>
+    <ion-spinner id="generalSpinner" name="crescent"></ion-spinner>
+  </ion-item>
+</ng-container>
+<!-- <div class=" split section-three">
+  <ion-button [disabled]="!selectedCountry" (click)="toGardes()">التالي</ion-button>
+</div> -->
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button [disabled]="!selectedCountry" (click)="toGardes()">التالي</ion-button>
+  </ion-toolbar>
+</ion-footer>
+
+</ng-container>
+
+</div>
+</ion-content>
+
+

@@ -1,0 +1,12 @@
+{
+  "name": "schoopedia",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular",
+  "plugins": {
+    "Keyboard": {
+      "resize": "KeyboardResize.None"
+    }
+  }
+}

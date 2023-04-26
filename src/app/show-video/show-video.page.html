@@ -1,0 +1,109 @@
+ <ion-content>
+
+    <div class="homescreen-content">
+      <div class="split section-one">
+        <ion-item class="tilte-name ion-color">
+          <div class="names ">
+            <ion-label class="grade ion-text-wrap"> {{videoData?.video_title}} </ion-label>
+          </div>
+        </ion-item>
+        <ion-buttons slot="start" id="back-btn" (click)="stopVideo()">
+          <ion-back-button  defaultHref="/lesson-videos/{{ videoData?.subject_id }}/{{ videoData?.lesson_id }}"
+          ></ion-back-button>
+        </ion-buttons>
+      </div>
+    </div>
+    <ng-container *ngIf="!loaded">
+       <ion-item>
+         <ion-spinner id="generalSpinner" name="crescent"></ion-spinner>
+       </ion-item>
+    </ng-container>
+
+    <ng-container *ngIf="loaded">
+      <div id="container" class="split section-two">
+        <youtube-player 
+          videoId="{{videoId}}" 
+          suggestedQuality="highres" 
+          [height]="250" 
+          [width]="300" 
+          [startSeconds]="4"
+          [endSeconds]="300">
+        </youtube-player>
+    
+        <div class="row">
+          <div class="col">
+            <h3>{{videoData?.video_title}}</h3>
+          </div>
+        </div>
+     
+
+        <ion-row class="video-details-row">
+          <ion-col size="5">
+            <ion-icon style="vertical-align: middle;
+            margin: 0 5px;" name="eye-outline"></ion-icon>
+            <span class="video-details-label">{{videoData?.reviewed_by}} مشاهدة</span>
+          </ion-col>
+          <ion-col size="7">
+            <ion-icon style="vertical-align: middle;
+            margin: 0 5px;" name="calendar-outline"></ion-icon>
+            <span class="video-details-label">تم النشر بتاريخ  
+              {{ formattedDate }} 
+               </span>
+          </ion-col>
+        </ion-row>
+    
+        <!-- Icons -->
+        <div class="row" style="display: flex;
+        justify-content: space-around;
+        margin-top: 15px;">
+        <div class="col">
+          <ion-icon name="thumbs-up-outline"></ion-icon>
+          <!-- <p>{{videoData?.likes}}</p> -->
+        </div>
+        <div class="col">
+          <ion-icon name="thumbs-down-outline"></ion-icon>
+          <!-- <p>{{videoData?.dislikes}}</p> -->
+        </div>
+        <div class="col">
+          <ion-icon name="download-outline"></ion-icon>
+          <!-- <p>Download</p> -->
+        </div>
+        <div class="col">
+          <ion-icon name="share-outline"></ion-icon>
+          <!-- <p>Share</p> -->
+        </div>
+        <div class="col">
+          <ion-icon [name]="isFavorited ? 'heart' : 'heart-outline'" [color]="isFavorited ? 'black' : ''" (click)="toggleFavorite(videoData?.id)"></ion-icon>
+        </div>
+      </div>
+      
+
+        <ion-card>
+          <ion-card-header>
+            <ion-label>تعليقات</ion-label>
+          </ion-card-header>
+        
+          <ion-card-content>
+            <ion-list>
+              <ion-item *ngFor="let comment of comments">
+                <ion-avatar slot="start">
+                  <img src="{{comment.avatarUrl}}">
+                </ion-avatar>
+                <ion-label>
+                  <h2>{{comment.author}}</h2>
+                  <p style="white-space: pre-wrap;">{{comment.text}}</p>
+                </ion-label>
+              </ion-item>
+            </ion-list>
+          </ion-card-content>
+        </ion-card>
+        
+  
+        
+      </div>
+    </ng-container>
+    
+
+  </ion-content>
+
+

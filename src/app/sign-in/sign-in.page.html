@@ -1,0 +1,88 @@
+<!-- <ion-header>
+  <ion-toolbar>
+      <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content [fullscreen]="true">
+
+  <div class="container">
+  <div class="logo ion-text-center">
+      <img src="../../assets/images/Main img (2).png" class="animate__animated animate__zoomIn wow logo_img"
+          data-wow-duration="0.3s">
+  </div>
+
+
+
+
+    <form #form="ngForm" [formGroup]="loginForm" (ngSubmit)="validate()">
+      <div class="username-password-inputs">
+        <ion-label position="floating" class="user-name">البريد الالكتروني</ion-label>
+        <ion-item >
+          <ion-input class="" formControlName="email" ></ion-input>
+        </ion-item>
+        <div class="error-container">
+          <ng-container *ngFor="let validation of validations?.email">
+            <div class="error-message-validtion" *ngIf="loginForm?.get('email').hasError(validation.type) && (loginForm?.get('email').dirty || loginForm?.get('email').touched)">
+              <span>{{ validation?.message }}</span>
+              <ion-icon name="information-circle-outline"></ion-icon>
+            </div>
+          </ng-container>
+        </div>
+        
+        <ion-label position="floating" class="user-name">كلمة المرور</ion-label>
+        <ion-item>
+          <ion-icon  [name]="(inputType == 'password') ? 'eye' : 'eye-off'" slot="start" (click)="inputType = (inputType == 'password') ? 'text' : 'password';"></ion-icon>
+          <ion-input  formControlName="password" [type]="inputType" class=""  ></ion-input>
+        </ion-item>
+        <div class="error-container">
+          <ng-container *ngFor="let validation of validations?.password">
+           <div class="error-message-validtion" *ngIf="loginForm?.get('password').hasError(validation.type) && (loginForm?.get('password').dirty || loginForm?.get('password').touched)">
+             <span>{{ validation?.message }}</span>
+             <ion-icon name="information-circle-outline"></ion-icon>
+
+           </div>
+          </ng-container>
+        </div>
+
+        <div class="continue-btn">
+          <ion-button  [disabled]="isData" type="submit">
+            <!-- <ion-spinner name="lines-sharp" *ngIf="isData"></ion-spinner> -->
+            دخول
+            <!-- <ion-spinner></ion-spinner> -->
+          </ion-button>
+        </div>
+
+        <p class="have-account" style="line-height: 20px;">
+        <span routerLink="/forget-password">  هل نسيت كلمة السر ؟ </span>
+        <!-- <span routerLink="/student-profile">  هل نسيت كلمة السر ؟ </span> -->
+        </p>
+
+    
+      </div>
+  </form>
+
+
+  
+<ion-item-divider>
+  <!-- <ion-label>Default</ion-label> -->
+</ion-item-divider>
+
+
+
+<!-- <ion-icon  [name]="'face-book'" slot="start"></ion-icon> -->
+
+<div class="icons">
+  <ion-img src="../../assets/images/apple.svg"></ion-img>
+  <ion-img src="../../assets/images/face-book.svg"></ion-img>
+  <ion-img src="../../assets/images/google-plus.svg"></ion-img>
+
+</div>
+
+
+<p class="have-account">
+  ليس لديك حساب؟ <span routerLink="/sign-up">اشتراك</span>
+</p>
+
+  </div>
+</ion-content>

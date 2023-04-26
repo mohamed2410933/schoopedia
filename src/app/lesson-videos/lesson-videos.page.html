@@ -1,0 +1,93 @@
+<ion-content>
+  <div class="homescreen-content">
+    <div class="split section-one">
+      <ion-item class="tilte-name ion-color">
+        <div class="names ">
+          <ion-label class="grade ion-text-wrap"> {{lessonData?.CAT_NAME}} </ion-label>
+        </div>
+      </ion-item>
+      <ion-buttons slot="start" id="back-btn">
+        <ion-back-button [defaultHref]="'/lessons/' + subjectID"></ion-back-button>
+      </ion-buttons>
+    </div>
+  </div>
+  <ng-container *ngIf="!loaded">
+     <ion-item>
+       <ion-spinner id="generalSpinner" name="crescent"></ion-spinner>
+     </ion-item>
+  </ng-container>
+  <ng-container *ngIf="loaded">
+    <div id="container" class="split section-two" [ngClass]="{'sec-two-height' : lessonsList?.length > 1 }">
+
+      <ion-card>
+        <ion-card-content>
+          <div class="upper-card-container ">
+            <span>
+              <ion-img class="card-img" style="margin-left: 10px;"  src="../../assets/images/Video.png"></ion-img>
+              <label style="    position: relative;top: 2px;" for="">{{lessonsList?.length}} فيديو</label>
+            </span>
+      
+            <span>
+              <ion-img class="card-img" src="../../assets/images/Icon-up.png"></ion-img>
+              <ion-img class="card-img" src="../../assets/images/Icon-down.png"></ion-img>
+            </span>
+            <ion-img class="card-img" src="../../assets/images/share.png"></ion-img>
+
+   
+          </div>
+        </ion-card-content>
+      </ion-card>
+
+
+      <ion-card *ngFor="let lesson of lessonsList">
+        <ion-row>
+          <ion-col size="8" style="direction: rtl;">
+            <ion-card-content>
+              <ion-card-title>{{lesson?.video_title}}</ion-card-title>
+              <ion-card-subtitle>{{lesson?.teacher}}</ion-card-subtitle>
+              <span class="last-text">{{lesson?.channel}}</span>  
+              <span class="rate">
+                  <ion-img src="../../assets/images/Star 2.png"></ion-img> 
+                  <span>4.5</span>
+              </span>
+            </ion-card-content>
+          </ion-col>
+          <ion-col size="4" (click)="goToVideo(lesson)">
+            <ion-img class="card-img" [src]="lesson?.image"></ion-img>
+          </ion-col>
+        </ion-row>
+      </ion-card>
+
+
+
+    </div>
+  </ng-container>
+
+
+
+
+
+
+
+  <div class=" split section-three">
+    <!-- <ion-tabs>
+      <ion-router-outlet></ion-router-outlet>
+
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button >
+          <ion-icon name="settings"></ion-icon>
+          الصفحة الشخصية
+        </ion-tab-button>
+        <ion-tab-button >
+          <ion-icon name="bookmark"></ion-icon>
+          المفضلة
+        </ion-tab-button>
+        <ion-tab-button >
+          <ion-icon name="home"></ion-icon>
+          المواد
+        </ion-tab-button>
+
+      </ion-tab-bar>
+    </ion-tabs> -->
+  </div>
+</ion-content>

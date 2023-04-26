@@ -1,0 +1,50 @@
+<ion-header dir="rtl">
+  <ion-toolbar>
+    <ion-title>الصفحة الشخصية</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content dir="rtl">
+  <div class="profile-header">
+    <ion-avatar class="avatar" (click)="openActionSheet()">
+      <img [src]="imageDataUrl" (click)="openActionSheet()">
+      <ion-icon name="camera" class="camera-icon"></ion-icon>
+    </ion-avatar>
+
+    <h2>{{ userData?.name }}</h2>
+    <h3>{{ currentInfo?.country_name }}</h3>
+    <div class="active-grade">
+      <ion-icon name="star"></ion-icon>
+      <p>{{ currentInfo?.grade_name }}</p>
+    </div>
+  </div>
+
+  <ion-list>
+    <!-- <ion-list-header>
+      تغيير الصف الدراسي
+    </ion-list-header> -->
+    <ion-list-header>
+      <ion-icon class="graeds-icon" name="school"></ion-icon>
+      تغيير الصف الدراسي
+    </ion-list-header>
+    <ion-item-group *ngFor="let item of gradesList">
+      <ion-item-divider>
+        {{ item?.country }}
+      </ion-item-divider>
+      <ion-item *ngFor="let grade of item?.grades " (click)="changeGrade(grade)">
+        {{ grade?.gradeName }}
+      </ion-item>
+    </ion-item-group>
+  </ion-list>
+  <ion-list-header>
+    <ion-icon class="graeds-icon" name="add-circle"></ion-icon>
+    اختيار صف دراسي جديد
+  </ion-list-header>
+  <ion-item routerLink="/grades/{{ currentInfo?.country_id }}">
+    <ion-label>الصفوف الدراسية</ion-label>
+    <ion-icon slot="end" name="arrow-forward"></ion-icon>
+  </ion-item>
+
+</ion-content>
+
+

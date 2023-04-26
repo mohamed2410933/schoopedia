@@ -1,0 +1,79 @@
+
+  <ion-content >
+    <div class="homescreen-content">
+          <div class="header-conatiner split section-one">
+            <label for="">اختر الصف الدراسي</label>
+          </div>
+  
+        
+        
+        <ng-container *ngIf="!loaded">
+
+
+        <ion-item>
+          <!-- <ion-label>Crescent</ion-label> -->
+          <ion-spinner id="generalSpinner" name="crescent"></ion-spinner>
+        </ion-item>
+      
+        </ng-container>
+        
+        
+        
+        <ng-container  *ngIf="loaded">
+          <div id="container"  class="split section-two">
+            <ion-accordion-group expand="inset" [value]="['first']">
+              <ion-accordion 
+                  value="first" 
+                  *ngFor="let item of gradesList let i = index;" 
+                   [ngClass]="{ 'selected': selectedGrade == item.id }"
+              >
+                <ion-item slot="header"  class="ion-color" >
+                  <ion-label>{{item?.name}}  
+                    <!-- <ion-spinner class="grade-spinner"
+                    *ngIf="showGradeSpinner"></ion-spinner> -->
+                  </ion-label>
+                </ion-item>
+           
+
+                  <div  slot="content" *ngFor="let standrd of gradeStandardList">
+                    <ion-item class="prams-title">{{standrd?.name}}</ion-item>
+                    <div class="ion-padding cards">
+                      <ion-card *ngFor="let element of standrd?.elements" 
+                      (click)="setSelectedElements( standrd.id , element.id) ; setRow(item.id)"  
+                       [ngClass]="{ 'selected': setSelectionStandard(element.id) }">
+                        <ion-card-header >
+                          <ion-card-title  class="element-name"
+                          [ngClass]="{ 'color-white': setSelectionStandard(element.id) }"
+                          >{{element?.name}}</ion-card-title>
+                        </ion-card-header>
+                      </ion-card>
+                    </div>
+                  </div>
+                  <!-- <ion-progress-bar [value]="progress"></ion-progress-bar> -->
+           
+
+                 
+               <!-- <div>
+              <ion-progress-bar [value]="progress"></ion-progress-bar>
+
+               </div> -->
+
+              </ion-accordion>
+          
+          
+            </ion-accordion-group>
+          </div>
+         
+        </ng-container>
+        
+        <div class=" split section-three">
+         
+          <ion-button   [disabled]="selectedElementsId?.length !== gradeStandardList?.length" (click)="storeStudentInfo()">التالي</ion-button>
+        </div>
+  
+  
+  
+</div>
+
+  </ion-content>
+

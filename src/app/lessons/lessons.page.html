@@ -1,0 +1,90 @@
+    <!-- <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>Back Button</ion-title>
+      </ion-toolbar>
+    </ion-header> -->
+<ion-content>
+  <div class="homescreen-content">
+    <div class="split section-one">
+     
+      <ion-item class="tilte-name ion-color" >
+        <div class="title-img" >
+          <ion-img class="" src="{{subjectInfo?.subjectImage}}"
+              [alt]="subjectName"></ion-img>
+        </div>
+        <div class="names">
+          <ion-label class="name">{{subjectName}}</ion-label>
+          <!-- <ion-label class="grade"> الصف الثاني الثانوي </ion-label> -->
+        </div>
+ 
+      </ion-item>
+      <!-- <ion-buttons slot="start" id="back-btn">
+        <ion-back-button defaultHref="subjects/{{subjectId}}"></ion-back-button>
+      </ion-buttons> -->
+      <ion-buttons slot="start" id="back-btn"> 
+        <ion-back-button 
+         [defaultHref]="'/subjects/' + currentUserInfo?.info_Id + '/' + currentUserInfo?.grade_Id "
+         ></ion-back-button>
+      </ion-buttons>
+  
+    </div>
+  </div>
+  
+  
+  
+  <ng-container *ngIf="!loaded">
+    <ion-item>
+      <ion-spinner id="generalSpinner" name="crescent"></ion-spinner>
+    </ion-item>
+  </ng-container>
+  
+    <ng-container *ngIf="loaded">
+      <div id="container" class="split section-two" [ngClass]="{'sec-two-height' : lessonsList?.length > 5 }">
+      <ion-card
+          *ngFor="let item of lessonsList let i = index;" 
+          (click)="handleItemClick(item)"
+          >
+          <!-- item?.DEPTH ==  maxDepth ?  toLessonsLinks(item) : '' -->
+        <ion-card-content>
+          <div class="card-container" >
+            <label for=""  [ngClass]="{'font-w-600' : item?.DEPTH == 0  , 'font-w-400' : item?.DEPTH !== 0 }">{{item?.CAT_NAME}}</label>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </ng-container>
+
+  
+  
+
+  
+
+
+  <div class=" split section-three">
+    <!-- <ion-tabs>
+      <ion-router-outlet></ion-router-outlet>
+    
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button  routerLink="/student-profile">
+          <ion-icon name="settings"></ion-icon>
+          الصفحة الشخصية
+        </ion-tab-button>
+        <ion-tab-button >
+          <ion-icon name="bookmark"></ion-icon>
+          المفضلة
+        </ion-tab-button>
+        <ion-tab-button >
+          <ion-icon name="home"></ion-icon>
+          المواد
+        </ion-tab-button>
+
+      </ion-tab-bar>
+    </ion-tabs> -->
+  </div>
+  </ion-content>
+  
+  
+  

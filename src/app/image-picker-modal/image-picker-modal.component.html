@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ title }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item (click)="takePhoto()">
+      <ion-label>Take Photo</ion-label>
+    </ion-item>
+    <ion-item (click)="chooseFromGallery()">
+      <ion-label>Choose from Gallery</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

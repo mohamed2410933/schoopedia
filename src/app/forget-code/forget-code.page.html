@@ -1,0 +1,66 @@
+
+
+
+<ion-content [fullscreen]="true"> 
+  <div class="container">
+    <!-- [ngClass]="{'v-hiiden' :  hideImage }" -->
+  <ion-img 
+
+  class="main-img" src="../../assets/images/Main img (2).png"
+  alt="The Wisconsin State Capitol building in Madison, WI at night"></ion-img>
+  <form #form="ngForm" [formGroup]="forgetCodeForm"  (ngSubmit)="validate()">
+      <div class="inputs-group">
+  
+        <div class="d-none">
+          <ion-label position="floating" class="user-name">البريد الاليكتروني</ion-label>
+          <ion-item >
+            <ion-input class="" placeholder="name@example.com"  formControlName="email" ></ion-input>
+          </ion-item>
+        </div>
+  
+         <!--  <div class="error-container">
+          <ng-container *ngFor="let validation of validations?.email">
+            <div class="error-message-validtion" *ngIf="forgetCodeForm?.get('email').hasError(validation.type) && (forgetCodeForm?.get('email').dirty || forgetCodeForm?.get('email').touched)">
+              <ion-icon name="information-circle-outline"></ion-icon>
+              <span>{{ validation?.message }}</span>
+            </div>
+          </ng-container>
+        </div> -->
+
+
+        <ion-label position="floating" class="user-name">كود التفعيل</ion-label>
+        <ion-item >
+          <ion-input class="" formControlName="forget_code" ></ion-input>
+        </ion-item>
+        <div class="error-container">
+          <ng-container *ngFor="let validation of validations?.forget_code">
+            <div class="error-message-validtion" *ngIf="forgetCodeForm?.get('forget_code').hasError(validation.type) && (forgetCodeForm?.get('forget_code').dirty || forgetCodeForm?.get('forget_code').touched)">
+              <ion-icon name="information-circle-outline"></ion-icon>
+              <span>{{ validation?.message }}</span>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+
+      <div class="continue-btn">
+        <ion-button type="submit">تفعيل</ion-button>
+      
+      </div>
+
+  </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+</ion-content>

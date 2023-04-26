@@ -1,0 +1,394 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+:root {
+  --primary: #7544e6;
+  --secondary: #76bd21;
+  --bg-color: #f3f5f5;
+  --text-light: #999999;
+  --text-light2: #c5c5c5;
+  --text-dark: #4c4c4c;
+  --text-black: #000;
+  --white: #fff;
+  --yelow-color: #ffd234;
+  --transparent: rgba(0, 0, 0, 0);
+  --red_color: #f93434;
+  --event: #f49c12;
+}
+ * {
+  // font-family: 'Baloo Bhaijaan 2', "cursive" !important;
+  font-family: "Vazirmatn", "sans-serif" !important;;
+}
+
+// @font-face {   
+//   font-family: 'Exo', sans-serif;  
+//   src: url('../src/assets/Exo/Exo-VariableFont_wght.ttf');
+// }
+
+
+ion-content{
+  // z-index: 99999999999;
+    --ion-background-color:#F4F5F9;
+    //  --font-family: 'Exo', sans-serif;
+    font-family: 'Baloo Bhaijaan 2', "cursive";
+
+
+}
+
+// ion-content{ 
+//   font-family:Varela !important;
+//   font-size:1.1em;
+// }
+
+ion-button{
+    width: 267px;
+    height: 55px;
+    --background: #5667FD;
+    box-shadow: 0px 14px 32px -2px rgb(0 0 0 / 10%);
+    border-radius: 12px;
+    font-family: 'Exo';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 27px;
+    text-align: center;
+    color: #FFFFFF;
+  }
+
+  ion-item{
+    --border-style: 0;
+}
+
+.toast-content {
+  padding: 14px 16px;
+  font-size: 20px;
+}
+
+.toast-custom-class {
+    --color: #ffffff;
+    --border-width: 3px;
+    --button-color: #ffffff;
+      font-size: 20px;
+      --background: #000000;
+      text-align: end;
+}
+
+input.native-input.sc-ion-input-md {
+  color: #000 !important;
+}
+
+
+
+
+ion-loading.custom-loading {
+  --background: #e3edff;
+  --spinner-color: #1c6dff;
+  color: #000;
+  font-size: 24px;
+}
+
+.loading-wrapper.ion-overlay-wrapper.sc-ion-loading-md {
+  border-radius: 10px
+  
+}
+.loading-spinner.sc-ion-loading-md {
+  // margin: 10px 20px;
+  border-radius: 15px;
+  // margin-top: -15px;
+}
+
+// ion-spinner{
+//   position: absolute;
+//   left: 20px;
+// }
+
+ion-header {
+  z-index: 999;
+  &::after {
+      display: none !important;
+  }
+  h6{
+      font-size: 12px;
+  }
+  h3{
+      font-size: 18px;
+      margin: 0;
+      color: var(--white);
+  }
+
+
+
+  //  ion-toolbar {
+  //     margin-bottom: -3px;
+  //     --background: var(--primary);
+  //     display: flex;
+  //     align-items: center;
+  //     min-height: 70px !important;
+  //     height: auto;
+  //     overflow: visible !important;
+  //     --border-width: 0 !important;
+  //     ion-buttons {
+  //         color:#fff;
+  //         position: relative !important;
+  //         margin: 0;
+  //         --padding-end: 0 !important;
+  //         --padding-start: 0 !important;
+  //         ion-back-button {
+  //             --color: var(--white) !important;
+  //             --icon-font-size: 1.6rem !important;
+  //         }
+  //         ion-menu-button {
+  //             --color: var(--text-black) !important;
+  //             --padding-end: 0 !important;
+  //             font-size: 1.8rem !important;
+  //             margin-right: 12px;
+  //             &.ios {
+  //                 font-size: 2rem !important;
+  //             }
+  //         }
+  //         ion-back-button {
+  //             .button-native {
+  //                 padding: 0 !important;
+  //             }
+  //         }
+  //         &.ios {
+  //             padding: 0 10px !important;
+  //         }
+  //     }
+  //     ion-title {
+  //         font-size: 1.2rem;
+  //         font-weight: 400;
+  //         letter-spacing: 0;
+  //         text-transform: none;
+  //         display: block;
+  //         position: absolute;
+  //         left: 0;
+  //         top: -5px;
+  //         overflow: visible !important;
+  //         line-height: 70px;
+  //         color: var(--white);
+  //         text-align: center !important;
+  //         width: 100%;
+  //         padding: 0 15px !important;
+  //     }
+  // }
+  // &.bg_transparent {
+  //     background-color: var(--transparent) !important;
+  //     ion-toolbar {
+  //         --background: var(--transparent);
+  //         --ion-color-base: var(--transparent) !important;
+  //     }
+  // }
+  // &.ios {
+  //     ion-toolbar ion-buttons ion-back-button {
+  //         right: unset;
+  //     }
+  // }
+
+
+}
+
+.header-conatiner{
+  direction: rtl;
+  // margin: 35px 13px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 35px;
+  line-height: 33px;
+  text-align: right;
+  // color: #364356;
+  color: var(--ion-color-primary);
+
+}
+
+ion-accordion-group{
+  direction: rtl;
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+  height: inherit;
+  }
+  
+  ::-webkit-scrollbar-track {
+    // background: #d7d8da;
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #737373;
+    border-radius: inherit;
+    border: inherit;
+  }
+
+
+  .v-hiiden{
+    visibility: hidden;
+  }
+
+  ion-accordion{
+    ion-item{
+        background-color: #fff;
+        color: #000;
+    }
+  }
+
+//   .scroll-content {
+//     padding-bottom: 0 !important;
+// }
+
+
+.error-message-validtion{
+  padding: 0 8px;
+    color: var(--ion-color-danger);
+}
+
+.selected{
+  background-color: #5667FD;
+  label{
+      color: #fff;
+  }
+}
+
+#generalSpinner {
+  // --color: #54dc98;
+  --color: #2dd36f;
+  width: 65px;
+  height: 65px;
+  position: fixed;
+  top: 36%;
+  left: 45%;
+  background: #fff;
+  border-radius: 10px;
+}
+
+// ion-spinner {
+//   --background-opacity: 0.8;
+//   --color-primary: #ff4081;
+//   --color-secondary: #4fc3f7;
+//   --size: 50px;
+// }
+
+#back-btn{
+  position: absolute;
+  top: 21%;
+  left: 10px;
+  background: #fff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+ion-tab-bar{
+  --background: #FFFFFF;
+  border: 0;
+}
+
+.button-native{
+  color: #31507F !important;
+}
+
+ion-back-button{
+  color: #31507F !important;
+}
+
+// .toast-container{
+//   flex-direction: row-reverse !important;
+//   padding: 0 10px !important;
+// }
+
+// ion-toast{
+//   ion-icon{
+//     position: absolute !important;
+//       left: 15px !important;
+//   }
+// }
+
+.d-none{
+  display: none;
+}
+
+.section-one{
+  padding: 0 15px;
+}
+// .section-two{
+//   margin-bottom: 1rem;
+// }
+// .section-three{
+//   margin-bottom: 92rem;
+// }
+
+.action-sheet-container{
+
+  direction: rtl;
+}
+
+iframe{
+  
+  width: 100% !important;
+}
+#widget14{
+  width: 100% !important;
+  margin-top: 30px;
+
+}
+ion-header{
+  padding: 15px;
+  background: #f4f5f9;
+  ion-toolbar{
+    --background: #f4f5f9!important /* red background */
+
+  }
+}
+
+.homescreen-content{
+  margin: 0 20px;
+// styles/ion-img.scss
+.title-name{
+  ion-img {
+    img {
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+  }
+}
+
+
+  
+}
+
+app-subjects.ion-page {
+  background: #f4f5f9;
+}
+
+
+ion-alert{
+  direction: rtl;
+}
+
+// ion-tabs{
+//   top: -67px !important;
+// }

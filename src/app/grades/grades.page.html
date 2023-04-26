@@ -1,0 +1,43 @@
+
+<ion-header dir="rtl">
+  <ion-toolbar>
+    <ion-title>اختر الصف الدراسي</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="homescreen-content">
+   <!-- <div class="header-conatiner split section-one">
+     <label for="">اختر الصف الدراسي</label>
+   </div> -->
+ <ng-container>
+   <ng-container *ngIf="loaded">
+     <div id="container" class="split section-two">
+     <ion-card
+         *ngFor="let item of gradesList let i = index;" 
+         (click)="setRow(item.id)"   
+         [ngClass]="{ 'selected': selectedGrade == item.id }"
+         >
+       <ion-card-content>
+         <div class="card-container" >
+           <label for="">{{item?.name}}</label>
+         </div>
+       </ion-card-content>
+     </ion-card>
+   </div>
+ </ng-container>
+ <ng-container *ngIf="!loaded">
+   <ion-item>
+     <ion-spinner id="generalSpinner" name="crescent"></ion-spinner>
+   </ion-item>
+ </ng-container>
+ 
+ </ng-container>
+ 
+ </div>
+
+ <ion-footer>
+    <ion-button  [disabled]="!selectedGrade" (click)="goToStandardPage()">التالي</ion-button>
+ </ion-footer>
+ </ion-content>
+ 

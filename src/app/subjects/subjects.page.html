@@ -1,0 +1,110 @@
+
+
+
+<!-- <div class="homescreen-content">
+  <div class="">
+    <ion-item class="tilte-name ion-color" *ngIf="loaded">
+      <div class="title-img" >
+      <img [src]="userAuth?.image" [alt]="userAuth?.name" 
+      (ionError)="setDefaultImage()">
+      </div>
+      <div class="names">
+        <ion-label class="name">{{userAuth?.name}}</ion-label>
+        <ion-label class="grade"> {{currentUserInfo?.gradeName}}</ion-label>
+      </div>
+    </ion-item>
+  </div>
+</div> -->
+
+<ion-header  dir="rtl">
+  <ion-toolbar>
+    <ion-item class="tilte-name ion-color" *ngIf="loaded">
+      <div class="title-img" >
+      <img [src]="userAuth?.image" [alt]="userAuth?.name" 
+      (ionError)="setDefaultImage()">
+      </div>
+      <div class="names">
+        <ion-label class="name">{{userAuth?.name}}</ion-label>
+        <ion-label class="grade"> {{currentUserInfo?.grade_name ? currentUserInfo?.grade_name :  currentUserInfo?.gradeName}}</ion-label>
+      </div>
+    </ion-item>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content [fullscreen]="false" >
+    <ng-container *ngIf="!loaded">
+      <ion-item>
+        <ion-spinner id="generalSpinner" name="crescent"></ion-spinner>
+      </ion-item>
+    </ng-container>
+    <ng-container *ngIf="loaded">
+      <div id="container" class="cards" [ngClass]="{'sec-two-height' : subjectsList?.length > 5 }">
+        <ng-container *ngIf="subjectsList?.length == 0">
+          <ion-grid class="ion-padding">
+            <ion-row>
+              <ion-col size="12" class="ion-text-center">
+                <div class="no-subjects">
+                  <ion-icon name="sad-outline" class="no-subjects-icon"></ion-icon>
+                  <h3 class="no-subjects-heading">عذرًا، لم يتم العثور على مواد دراسية</h3>
+                  <p class="no-subjects-text">يرجى المحاولة مع بحث مختلف.</p>
+                </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+          
+        </ng-container>
+
+
+        <ng-container *ngIf="loaded && subjectsList?.length !== 0">
+        <ion-card *ngFor="let subject of subjectsList"   [routerLink]="'/lessons/' + subject?.subject_id "  
+        (click)="generalService.setSubjectName({subjectName :  subject?.subject_name , subjectImage : subject?.subject_icon })">
+          <img 
+          alt="subject icon" 
+          [src]="subject.subject_icon" />
+          <ion-card-header>
+            <ion-card-title class="subject-name">{{subject?.subject_name}}</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ng-container>
+
+    
+
+
+
+      </div>
+
+
+    </ng-container>
+    <!-- <ion-tabs dir="rtl">
+
+
+      <ion-tab-bar slot="bottom" >
+        <ion-tab-button >
+          <ion-icon name="home"></ion-icon>
+          <ion-label>المواد</ion-label>
+        </ion-tab-button>
+        <ion-tab-button tab="home">
+          <ion-icon name="heart"  ></ion-icon>
+          <ion-label>المفضلة</ion-label>
+        </ion-tab-button>
+        <ion-tab-button  routerLink="/settings">
+          <ion-icon name="settings"></ion-icon>
+          <ion-label>المزيد</ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
+    
+    </ion-tabs> -->
+</ion-content>
+
+<div class="switch-icons my-class" id="my-element-id">
+  <ion-icon name="home"></ion-icon>
+  <ion-icon name="heart"></ion-icon>
+  <ion-icon name="settings"></ion-icon>
+</div>
+
+
+
+
+

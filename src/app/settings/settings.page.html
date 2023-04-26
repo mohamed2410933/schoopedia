@@ -1,0 +1,53 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>إعدادات</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-header dir="rtl">
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="3" class="ion-align-self-center">
+          <!-- <ion-img class="rounded-img" [src]="userAuth?.image" [alt]="userAuth?.name"></ion-img> -->
+          <img class="rounded-img" [src]="userAuth?.studentInfo[0].countryImage" 
+         >
+        </ion-col>
+        <ion-col size="9" class="ion-align-self-center">
+          <ion-label> {{ userAuth?.name }}</ion-label>
+          <div> {{ userAuth?.studentInfo[0].countryName }}</div>
+       
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content dir="rtl">
+  <ion-list>
+    <ion-item (click)="toStudentProfile()">
+      <ion-icon slot="start" name="person-circle"></ion-icon>
+      <ion-label>الملف الشخصي</ion-label>
+    </ion-item>
+    <ion-item routerLink="/opinions">
+      <ion-icon slot="start" name="chatbox-ellipses"></ion-icon>
+      <ion-label>الأراء</ion-label>
+    </ion-item>
+    <ion-item routerLink="/app-rating">
+      <ion-icon slot="start" name="star"></ion-icon>
+      <ion-label>تقييم التطبيق</ion-label>
+    </ion-item>
+    <ion-item routerLink="/complaints">
+      <ion-icon slot="start" name="warning"></ion-icon>
+      <ion-label>الشكاوي</ion-label>
+    </ion-item>
+    <ion-item routerLink="/about">
+      <ion-icon slot="start" name="information-circle"></ion-icon>
+      <ion-label>عن التطبيق</ion-label>
+    </ion-item>
+    <ion-item  (click)="logout()">
+      <ion-icon slot="start" name="log-out"></ion-icon>
+      <ion-label>تسجيل الخروج</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

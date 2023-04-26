@@ -1,0 +1,61 @@
+<!-- 
+
+
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      My Favorite Videos
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content>
+ 
+  <ng-container *ngIf="!loaded">
+     <ion-item>
+       <ion-spinner id="generalSpinner" name="crescent"></ion-spinner>
+     </ion-item>
+  </ng-container>
+  <ng-container *ngIf="loaded">
+    <div id="container" class="split section-two" [ngClass]="{'sec-two-height' : lessonsList?.length > 1 }">
+
+     
+
+
+      <ion-card *ngFor="let lesson of lessonsList">
+        <ion-row>
+          <ion-col size="8" style="direction: rtl;">
+            <ion-card-content>
+              <ion-card-title>{{lesson?.video_title}}</ion-card-title>
+              <ion-card-subtitle>{{lesson?.teacher}}</ion-card-subtitle>
+              <span class="last-text">{{lesson?.channel}}</span>  
+              <span class="rate">
+                  <ion-img src="../../assets/images/Star 2.png"></ion-img> 
+                  <span>4.5</span>
+              </span>
+            </ion-card-content>
+          </ion-col>
+          <ion-col size="4" (click)="goToVideo(lesson)">
+            <ion-img class="card-img" [src]="lesson?.image"></ion-img>
+          </ion-col>
+        </ion-row>
+      </ion-card>
+
+
+
+    </div>
+  </ng-container>
+
+
+
+
+
+
+
+  <div class=" split section-three">
+
+  </div>
+</ion-content> -->

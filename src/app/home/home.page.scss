@@ -1,0 +1,46 @@
+#container {
+  text-align: center;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+
+
+  ion-img{
+    margin: 0 30px;
+    padding: 10px;
+    margin-bottom: 3rem;
+    height: 218px;
+  }
+
+
+  .let-help-you{
+    color: var(--ion-color-primary);;
+    font-size: 30px;
+    // font-family: "Exo";
+    font-weight: 600;
+    line-height: 40px;
+    font-style: normal;
+    margin: 40px 20px;
+  }
+
+  .please-register{
+    color: #636D77;
+    // font-family: "Exo";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 35px;
+    text-align: center;
+    margin: 45px 20px;
+  }
+
+
+}
+
+
+
+
+

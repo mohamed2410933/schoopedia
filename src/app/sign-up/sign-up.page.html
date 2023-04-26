@@ -1,0 +1,108 @@
+
+
+<ion-content [fullscreen]="true"> 
+
+
+
+  <div class="container">
+
+  <ion-img 
+  class="main-img" src="../../assets/images/Main img (2).png"
+  alt="The Wisconsin State Capitol building in Madison, WI at night"></ion-img>
+
+  <form #form [formGroup]="registerForm" (ngSubmit)="validate()" novalidate>
+      <div class="inputs-group">
+
+        <ion-label position="floating" class="user-name">اسم المستخدم</ion-label>
+        <!-- [ngClass]="{'rtl' : !isRTL , 'ltr' : isRTL }"  -->
+        <ion-item  >
+          <ion-input class=""  formControlName="name" type="text"  id="name" appDetectLanguage ></ion-input>
+        </ion-item>
+       <div class="error-container">
+          <ng-container *ngFor="let validation of validations?.name">
+            <div class="error-message-validtion" *ngIf="registerForm?.get('name').hasError(validation.type) && (registerForm?.get('name').dirty || registerForm?.get('name').touched)">
+              <span>{{ validation?.message }}</span>
+              <ion-icon name="information-circle-outline"></ion-icon>
+            </div>
+          </ng-container>
+        </div>
+
+
+
+
+        <ion-label position="floating" class="user-name">البريد الالكتروني</ion-label>
+        <!-- [ngClass]="{'rtl' : !isRTL , 'ltr' : isRTL }" -->
+        <ion-item  >
+          <ion-input formControlName="email" type="email" placeholder="name@example.com" id="email"  ></ion-input>
+        </ion-item>
+        <div class="error-container">
+          <ng-container *ngFor="let validation of validations?.email">
+            <div class="error-message-validtion" *ngIf="registerForm?.get('email').hasError(validation.type) && (registerForm?.get('email').dirty || registerForm?.get('email').touched)">
+              <span>{{ validation?.message }}</span>
+              <ion-icon name="information-circle-outline"></ion-icon>
+            </div>
+          </ng-container>
+        </div>
+
+    
+
+        
+        <ion-label position="floating" class="user-name">كلمة المرور</ion-label>
+        <!-- [ngClass]="{'rtl' : !isRTL , 'ltr' : isRTL }" -->
+        <ion-item  >
+          <ion-icon  [name]="(inputType == 'password') ? 'eye' : 'eye-off'" slot="start" (click)="inputType = (inputType == 'password') ? 'text' : 'password';"></ion-icon>
+          <ion-input [type]="inputType" class="" formControlName="password"  id="password" ></ion-input>
+        </ion-item>
+        <div class="error-container">
+           <ng-container *ngFor="let validation of validations?.password">
+            <div class="error-message-validtion" *ngIf="registerForm?.get('password').hasError(validation.type) && (registerForm?.get('password').dirty || registerForm?.get('password').touched)">
+              <span>{{ validation?.message }}</span>
+              <ion-icon name="information-circle-outline"></ion-icon>
+            </div>
+           </ng-container>
+         </div>
+
+        <ion-label position="floating" class="user-name">تأكيد كلمة المرور</ion-label>
+        <!-- [ngClass]="{'rtl' : !isRTL , 'ltr' : isRTL }"  -->
+        <ion-item >
+          <ion-icon  [name]="(inputConfirmPasswordType == 'password') ? 'eye' : 'eye-off'" slot="start" (click)="inputConfirmPasswordType = (inputConfirmPasswordType == 'password') ? 'text' : 'password';"></ion-icon>
+          <ion-input [type]="inputConfirmPasswordType" class=""  formControlName="password_confirmation"  id="password_confirmation"  ></ion-input>
+        </ion-item>
+        <div class="error-container">
+          <ng-container *ngFor="let validation of validations?.password_confirmation">
+           <div class="error-message-validtion" *ngIf="registerForm?.get('password_confirmation').hasError(validation.type) && (registerForm?.get('password_confirmation').dirty || registerForm?.get('password_confirmation').touched)">
+             <span>{{ validation?.message }}</span>
+             <ion-icon name="information-circle-outline"></ion-icon>
+           </div>
+          </ng-container>
+        </div>
+     
+      </div>
+
+      <div class="continue-btn">
+        <ion-button type="submit">تسجيل</ion-button>
+      
+      </div>
+
+  </form>
+
+
+
+
+
+<!-- <ion-item-divider>
+</ion-item-divider> -->
+
+
+
+
+
+
+<p class="have-account">
+ لديك حساب؟ <span routerLink="/sign-in">تسجيل الدخول</span>
+</p>
+
+
+</div>
+
+</ion-content>

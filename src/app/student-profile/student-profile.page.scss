@@ -1,0 +1,228 @@
+// ion-card{
+//     background-color: #fff;
+// }
+// ion-card-header {
+//    color: #636D77;
+//   }
+  
+//   ion-card-header ion-card-title,
+//   ion-card-header ion-card-subtitle {
+//    color: #636D77;
+//   }
+  
+//   ion-avatar {
+//     border: 1px solid #625959;
+//   }
+  
+//   ion-list ion-item ion-label {
+//     font-weight: bold;
+//   }
+  
+//   ion-list ion-item ion-text {
+//     font-size: 18px;
+//   }
+  
+//   ion-segment {
+//     border: none;
+//     display: flex;
+//     align-items: center;
+//     flex-wrap: wrap;
+//   }
+  
+//   ion-segment-button {
+//     color: #757575;
+//     font-size: 14px;
+//     text-transform: uppercase;
+//     padding: 10px 16px;
+//   }
+  
+//   ion-segment-button:checked {
+//     color: #007aff;
+//     font-weight: bold;
+//   }
+  
+//   ion-segment-button ion-icon {
+//     font-size: 16px;
+//     margin-left: 5px;
+//     color: #007aff;
+//   }
+
+  
+//   ion-segment-button {
+//     color: #757575;
+//     font-size: 14px;
+//     text-transform: uppercase;
+//     padding: 10px 16px;
+//     height: 100%;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//   }
+  
+//   ion-segment-button:checked {
+//     color: #007aff;
+//     font-weight: bold;
+//   }
+  
+//   ion-segment-button ion-icon {
+//     font-size: 16px;
+//     margin-left: 5px;
+//     color: #007aff;
+//   }
+  .avatar {
+    position: relative;
+  }
+  
+  .camera-icon {
+    position: absolute;
+    bottom: -2px;
+    right: 68px;
+    background-color: white;
+    border-radius: 50%;
+    padding: 5px;
+    color: black;
+    border: 1px solid #625959;
+  }
+
+
+  .my-action-sheet {
+    --background: #f1f1f1;
+    direction: rtl;
+  }
+  
+  .my-action-sheet ion-button {
+    color: var(--ion-color-primary);
+  }
+  
+  .my-action-sheet ion-icon {
+    color: black;
+  }
+  
+
+.profile-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.profile-header ion-avatar {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 10px;
+}
+
+.profile-header h2 {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.profile-header h3 {
+  font-size: 18px;
+  font-weight: 400;
+  color: #999;
+  margin-bottom: 20px;
+}
+
+.active-grade {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f5f5;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.active-grade ion-icon {
+  color: #ffd700;
+  font-size: 24px;
+  margin-left: 10px;
+}
+
+.active-grade p {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+}
+
+ion-list-header {
+  font-size: 20px;
+  font-weight: 600;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+ion-item-divider {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+ion-item {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+ion-tab-button {
+  --color-selected: #387ef5;
+  --color: #999;
+}
+
+ion-tab-button ion-icon {
+  font-size: 24px;
+}
+
+ion-tab-button ion-label {
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Styling for the grades in the ion-list */
+ion-item ion-label {
+  font-size: 24px;
+  font-weight: bold;
+  color: #4a4a4a;
+}
+
+ion-item ion-button {
+  margin-left: 8px;
+  color: #ff6b6b;
+  border: 2px solid #ff6b6b;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+ion-item ion-button:hover {
+  background-color: #ff6b6b;
+  color: white;
+}
+
+/* Styling for the confirmation toast message */
+.toast-message {
+  background-color: #ff6b6b;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.toast-button {
+  color: white;
+}
+
+
+.selected-grade {
+  color: #ff6b6b;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.graeds-icon{
+  margin-left: 10px;
+}
